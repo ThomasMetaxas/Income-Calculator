@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TImeCostController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Informations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane prefHeight="384.0" prefWidth="600.0">
+                           <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="860.0" prefWidth="600.0">
+                                 <children>
+                                    <Text layoutX="226.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <ComboBox fx:id="currencyCB" layoutX="372.0" layoutY="80.0" onAction="#chooseCurrency" prefHeight="27.0" prefWidth="160.0" promptText="Choisissez votre monnaie" />
+                                    <TextField fx:id="hourly" layoutX="372.0" layoutY="160.0" onKeyReleased="#setHourly" promptText="Entrez votre salaire horaire" />
+                                    <Label alignment="CENTER" layoutX="126.0" layoutY="80.0" text="Monnaie" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="hourlySalaryText" alignment="CENTER" layoutX="105.0" layoutY="160.0" text="Salaire horaire" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="hoursPerWeekText" alignment="CENTER" layoutX="84.0" layoutY="200.0" text="Heures par semaine" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="weekHours" layoutX="372.0" layoutY="200.0" onKeyReleased="#setWeekHours" promptText="Entrez le nombre d'heures de travail par semaine" />
+                                    <Label fx:id="weekPerYearText" alignment="CENTER" layoutX="83.0" layoutY="240.0" text="Semaines par année" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="weekYears" layoutX="372.0" layoutY="240.0" onKeyReleased="#setWeekYears" promptText="Entrez le nombre de semaines par année" />
+                                    <Label fx:id="annualSalary" alignment="CENTER" layoutX="13.0" layoutY="280.0" prefHeight="23.0" prefWidth="573.0" text="Salaire annuel (avant impôts):" textAlignment="CENTER" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="103.0" layoutY="120.0" text="Type de salaire" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="salaryTypeCB" layoutX="372.0" layoutY="120.0" onAction="#chooseSalaryType" prefHeight="27.0" prefWidth="160.0" promptText="Choisissez votre monnaie" />
+                                    <Label alignment="CENTER" layoutX="87.0" layoutY="320.0" text="Impot sur le revenu" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="incomeTaxCB" layoutX="373.0" layoutY="320.0" onAction="#chooseIncomeTax" prefHeight="27.0" prefWidth="160.0" promptText="Choisissez votre système d'impot" />
+                                    <Label fx:id="customIncomeTaxText" alignment="CENTER" layoutX="122.0" layoutY="360.0" text="Pays" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="customIncomeTax" layoutX="372.0" layoutY="358.0" onKeyReleased="#setCustomIncomeTax" promptText="Entrez le % d'impôt" />
+                                    <ComboBox fx:id="countryCB" layoutX="373.0" layoutY="358.0" onAction="#chooseCountry" prefHeight="27.0" prefWidth="160.0" promptText="Choisissez votre système d'impot" />
+                                    <Label fx:id="taxAmount" alignment="CENTER" layoutX="12.0" layoutY="400.0" prefHeight="23.0" prefWidth="573.0" text="Impôts a payer:" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="annualSalaryTax" alignment="CENTER" layoutX="12.0" layoutY="440.0" prefHeight="23.0" prefWidth="573.0" text="Salaire annuel (après impôts):" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="65.0" layoutY="480.0" text="Taux de paiement (loyer)" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="rentPaymentRateCB" layoutX="373.0" layoutY="480.0" onAction="#chooseRentPaymentRate" prefHeight="27.0" prefWidth="160.0" promptText="Choississez votre taux de paiement" />
+                                    <Label alignment="CENTER" layoutX="114.0" layoutY="520.0" text="Prix du loyer" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentRate" layoutX="372.0" layoutY="520.0" onKeyReleased="#setRentRate" promptText="Entrez le prix de votre loyer" />
+                                    <Label fx:id="annualRentText" alignment="CENTER" layoutX="13.0" layoutY="560.0" prefHeight="23.0" prefWidth="573.0" text="Prix de loyer annuel:" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="incomeRentText" alignment="CENTER" layoutX="13.0" layoutY="600.0" prefHeight="23.0" prefWidth="573.0" text="Salaire annuel (après loyer):" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="otherPaymentRateCB" layoutX="373.0" layoutY="640.0" onAction="#chooseOtherPaymentRate" prefHeight="27.0" prefWidth="160.0" promptText="Choississez votre taux de paiement" />
+                                    <Label alignment="CENTER" layoutX="70.0" layoutY="640.0" text="Taux d'autres dépenses" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="75.0" layoutY="680.0" text="Prix d'autres dépenses" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="otherPayment" layoutX="372.0" layoutY="680.0" onKeyReleased="#setOtherPayment" promptText="Entrez le prix des dépenses" />
+                                    <Label fx:id="annualOtherPaymentText" alignment="CENTER" layoutX="13.0" layoutY="720.0" prefHeight="23.0" prefWidth="573.0" text="Prix d'autres dépenses annuel:" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="finalIncomeText" alignment="CENTER" layoutX="13.0" layoutY="760.0" prefHeight="23.0" prefWidth="573.0" text="Salaire annuel final:" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="saveButton" layoutX="47.0" layoutY="800.0" mnemonicParsing="false" onAction="#save" text="Sauvegarder l'information" />
+                                    <Button fx:id="restoreButton" layoutX="380.0" layoutY="800.0" mnemonicParsing="false" onAction="#loadSave" text="Restaurer la sauvegarde" />
+                                    <Button fx:id="resetButton" layoutX="255.0" layoutY="800.0" mnemonicParsing="false" onAction="#reset" text="Remettre a 0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Temps de travail">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MenuBar>
+                           <menus>
+                              <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#newSession" text="Nouveau" />
+                                    <MenuItem mnemonicParsing="false" onAction="#openFile" text="Ouvrir" />
+                                    <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Enregistrer" />
+                                    <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Enregistrer sous" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Edit">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Delete" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="About" />
+                                 </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <Text layoutX="204.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps de travail" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="productName" layoutX="372.0" layoutY="80.0" onKeyReleased="#setProductName" promptText="Entrez le nom du produit" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="126.0" layoutY="80.0" text="Nom du produit" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="120.0" text="Prix du produit" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productPrice" layoutX="372.0" layoutY="120.0" onKeyReleased="#setProductPrice" promptText="Entrez le prix du produit" />
+                        <TextField fx:id="productQuantity" layoutX="372.0" layoutY="160.0" onKeyReleased="#setProductQuantity" promptText="Entrez la quantité de produit" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="160.0" text="Quantité de produit" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="117.0" layoutY="240.0" text="Taxe de vente (%)" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="salesTax" layoutX="372.0" layoutY="240.0" onKeyReleased="#setSalesTax" promptText="Entrez le % de taxe de vente" />
+                        <Label fx:id="subTotalText" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="200.0" prefHeight="23.0" prefWidth="578.0" text="Sous total:" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalText" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="280.0" prefHeight="23.0" prefWidth="578.0" text="Total:" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="workTimeText" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="320.0" prefHeight="23.0" prefWidth="578.0" text="Heures de travail nécessaire:" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

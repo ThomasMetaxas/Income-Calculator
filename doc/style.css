@@ -1,0 +1,211 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+nav {
+	float: right;
+	margin-top: 30px;
+	z-index: 2;
+}
+
+nav .ul-1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav .ul-2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+	margin-top: 20px;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	padding: 5px 30px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;
+}
+
+nav li.active a {
+	border: 1px solid white;
+}
+
+nav li a:hover {
+	border: 1px solid white;
+}
+
+body {
+	font-family: monospace;
+	overflow-x: hidden;
+}
+
+.hero {
+	position: absolute;
+	width: 100%;
+	height: 1%;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.hero-two {
+	position: absolute;
+	width: 50%;
+	margin-left: 0px;
+	margin-top: -0px;
+}
+
+h1 {
+	color: white;
+	font-size: 90px;
+	text-align: center;
+	margin-top: 20%;
+	font-family: "Times New Roman";
+}
+
+.parallax {
+  /* The image used */
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./Files/money.jpg);
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.button-one {
+	border: 1px solid white;
+	padding: 10px 30px;
+	color: white;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+.button-one:hover {
+	background-color: darkred;
+	transition: all 0.25s ease-in;
+}
+
+h2 {
+	color: white;
+	font-size: 45px;
+	text-align: left;
+	margin-top: 15px;
+	margin-left: 35px;
+	font-family: "Times New Roman";
+}
+
+.footer-main-div {
+	width: 100%;
+	height: 150px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	position: absolute;
+	background: #272727;
+	padding: 20px 0px;
+}
+
+.footer-social-icons {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.footer-social-icons ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-social-icons ul li {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0px 10px;
+	border-radius: 100%;
+	background: #add8e6;
+}
+
+.footer-social-icons ul li:hover {
+	background: #21b9de;
+}
+
+.footer-social-icons ul li a {
+	color: #272727;
+	font-size: 25px;
+	display: block;
+}
+
+.footer-social-icons ul li a i {
+	line-height: 50px;
+}
+
+.email {
+	color: white;
+	font-size: 15px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.footer-menu {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.footer-menu ul {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer-menu ul li {
+	display: inline-block;
+	margin: 0px 20px;
+}
+
+.footer-menu ul li a {
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
+}
+
+.footer-menu ul li a:hover {
+	color: #add8e6;
+}
+
+.footer-bottom {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	background: #4a4949;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
